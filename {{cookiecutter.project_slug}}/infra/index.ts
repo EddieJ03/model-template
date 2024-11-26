@@ -40,7 +40,30 @@ const podBuilder = new kx.PodBuilder({
 });
 
 const deployment = new kx.Deployment('{{cookiecutter.project_slug}}-serving', {
-    spec: podBuilder.asDeploymentSpec({ replicas: 3 }) 
+    spec: podBuilder.asDeploymentSpec({ replicas: 2 }) 
+}, { provider });
+
+
+// Create a Horizontal Pod Autoscaler
+const hpa = new k8s.autoscaling.v2.HorizontalPodAutoscaler("{{cookiecutter.project_slug}}-hpa", {
+    spec: {
+        scaleTargetRef: {
+            apiVersion: "apps/v1",
+            kind: "Deployment",
+            name: deployment.metadata.name,
+        },
+        maxReplicas: 5,
+        metrics: [{
+            type: "Resource",
+            resource: {
+                name: "cpu",
+                target: {
+                    type: "Utilization",
+                    averageUtilization: 50,
+                },
+            },
+        }],
+    },
 }, { provider });
 
 const service = deployment.createService();

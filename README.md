@@ -7,5 +7,5 @@ Then git clone this repo.
 Then run `cookiecutter <path to this directory>` to setup a new ML repo to train & deploy a model. 
 
 ## TODOS:
-- Add Makefile and GitHub Actions CI/CD
+- Add Makefile and GitHub Actions CI/CD to deploy image and pod
 - Add DVC
