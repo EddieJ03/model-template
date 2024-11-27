@@ -1,6 +1,0 @@
-config:
-  azure-native:location: westus2
-  infra:kubernetesVersion: 1.26.3
-  infra:nodeVmSize: Standard_B1s
-  infra:numWorkerNodes: "2"
-  infra:prefixForDns: pulumi

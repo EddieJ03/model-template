@@ -1,10 +1,3 @@
-name: infra
-description: A TypeScript program to deploy a Kubernetes cluster on Azure
-runtime:
-  name: nodejs
-  options:
-    packagemanager: npm
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: kubernetes-azure-typescript
+name: {{cookiecutter.project_slug}}-infra
+runtime: nodejs
+description: Serving infrastructure for {{cookiecutter.project_slug}}
