@@ -9,7 +9,6 @@
         "@pulumi/azure-native": "^2.0.0",
         "@pulumi/docker": "^4.5.7",
         "@pulumi/kubernetes": "^4.18.3",
-        "@pulumi/kubernetesx": "^0.1.6",
         "@pulumi/pulumi": "^3.113.0"
     }
 }

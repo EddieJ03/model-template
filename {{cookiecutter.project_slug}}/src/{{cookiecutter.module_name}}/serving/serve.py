@@ -3,13 +3,12 @@ from pydantic import BaseModel
 import uvicorn
 import mlflow
 import pandas as pd
-import numpy as np
 import os
 import sys
 import lightgbm as lgb
 
 # List of required environment variables
-REQUIRED_ENV_VARS = ["MLFLOW_RUN_ID", "AZURE_STORAGE_CONNECTION_STRING"]
+REQUIRED_ENV_VARS = ["MLFLOW_RUN_ID", "AZURE_STORAGE_CONNECTION_STRING", "MLFLOW_TRACKING_URI"]
 
 # Check if all required variables are set
 missing_vars = [var for var in REQUIRED_ENV_VARS if var not in os.environ]

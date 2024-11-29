@@ -3,8 +3,8 @@
     "email": "ejscfj@gmail.com",
     "github_username": "EddieJ03",
     "project_name": "My Model",
-    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') + random_ascii_string(12) }}",
-    "module_name": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') + random_ascii_string(12).lower() }}",
+    "module_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
     "project_short_description": "My Model contains all the boilerplate you need to train and deploy a model.",
     "version": "0.1.0",
     "use_pytest": "n"
