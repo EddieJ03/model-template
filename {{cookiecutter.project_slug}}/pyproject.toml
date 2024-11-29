@@ -3,6 +3,7 @@ name = "{{cookiecutter.project_slug}}"
 version = "{{ cookiecutter.version }}"
 description = "{{ cookiecutter.project_short_description }}"
 authors = ["{{ cookiecutter.full_name.replace("\"", "\\\"") }} <{{ cookiecutter.email }}>"]
+packages = [{include = "{{cookiecutter.project_slug}}"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -19,8 +20,8 @@ azure-storage-blob = "^12.24.0"
 azure-identity = "^1.19.0"
 
 [tool.poetry.scripts]
-train = "src.{{cookiecutter.module_name}}.training.train:main"
-serve = "src.{{cookiecutter.module_name}}.serving.serve:main"
+train = "{{cookiecutter.project_slug}}.training.train:main"
+serve = "{{cookiecutter.project_slug}}.serving.serve:main"
 
 [build-system]
 requires = ["poetry-core"]
