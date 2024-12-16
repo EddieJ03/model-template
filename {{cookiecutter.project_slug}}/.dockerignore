@@ -3,3 +3,5 @@
 __pycache__
 node_modules
 data
+tests
+{{cookiecutter.project_slug}}/training/
