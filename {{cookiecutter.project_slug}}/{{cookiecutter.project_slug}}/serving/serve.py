@@ -5,6 +5,10 @@ import mlflow
 import pandas as pd
 import os
 import sys
+
+# adds the parent directory to path in case you have sibling folders with stuff you need
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import lightgbm as lgb
 
 # List of required environment variables

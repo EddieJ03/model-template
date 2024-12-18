@@ -6,6 +6,9 @@ import mlflow.lightgbm
 import os
 import sys
 
+# adds the parent directory to path in case you have sibling folders with stuff you need
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 # List of required environment variables
 REQUIRED_ENV_VARS = ["MLFLOW_TRACKING_URI", "AZURE_STORAGE_CONNECTION_STRING"]
 

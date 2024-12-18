@@ -12,7 +12,7 @@
 2. Run `poetry run train`
 
 ## Serving Model
-1. Set `MLFLOW_RUN_ID`, `AZURE_STORAGE_CONNECTION_STRING`, and `MLFLOW_TRACKING_URI` through terminal then run `poetry run serve`
+1. Set `MLFLOW_RUN_ID`, `AZURE_STORAGE_CONNECTION_STRING`, `LISTEN_PORT`, and `MLFLOW_TRACKING_URI` through terminal then run `poetry run serve`
 2. To run serving container locally 
     - Build the Docker image first using `docker build . -t <image name>`
     - run `docker run -e MLFLOW_RUN_ID=<run id> -e AZURE_STORAGE_CONNECTION_STRING=<connection string> -e MLFLOW_TRACKING_URI=<mlflow uri> -p <local port>:<app port in container> <image name>` 
