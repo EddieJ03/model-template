@@ -26,11 +26,14 @@
 3. Set the `azureStorageConnectionString` using `pulumi config set --secret azureStorageConnectionString <connection string>`
 4. Run `pulumi config set <config property> <config value>` for each required config property in `index.ts`
     - `pulumi config set baseStackName <name of Pulumi stack that setup the Kubernetes cluster>`
+        - A stack reference's name should be of the form `<organization>/<project>/<stack>`
     - `pulumi config set dockerUsername <username>`
     - `pulumi config set port <port number>`
     - `pulumi config set mlflowURI <MLflow URI>`
     - `pulumi config set runID <ID of the MLflow run>`
 5. Run `pulumi up --yes --skip-preview`
+    - Note that it may take more than one try to get this working. Run `pulumi cancel` if stuck.
+    - Note that creating the pod may result in Pulumi saying failed because it timed out, but it still ends up being created on your AKS.
 
 ## Deleting Deployed Model
 Comment out everything in `index.ts` and run `pulumi up --yes --skip-preview`. Pulumi will detect everything is gone and remove the appropriate resources from Azure.
