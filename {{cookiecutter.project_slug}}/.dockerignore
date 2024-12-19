@@ -1,7 +1,11 @@
 .git
+.github/
 .cache
 __pycache__
 node_modules
 data
-tests
 {{cookiecutter.project_slug}}/training/
+tests
+mlruns
+*.md
+infra

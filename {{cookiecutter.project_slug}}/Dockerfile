@@ -8,13 +8,9 @@ ENV LISTEN_PORT 8000
 RUN apt update && apt install -y libgomp1
 RUN pip3 install poetry
 
-# Project dependencies
-COPY poetry.lock pyproject.toml ./
+COPY . .
 
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-interaction --no-ansi --no-dev
 
-COPY . .
-
-WORKDIR /{{cookiecutter.project_slug}}/src
-ENTRYPOINT uvicorn {{cookiecutter.module_name}}.serving.serve:app --host 0.0.0.0 --port $LISTEN_PORT --workers 2
+ENTRYPOINT uvicorn {{cookiecutter.project_slug}}.serving.serve:app --host 0.0.0.0 --port $LISTEN_PORT --workers 2

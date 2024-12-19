@@ -54,7 +54,7 @@ def root():
     return {"message": "Hello world"}
 
 def main():
-    uvicorn.run(app, host='0.0.0.0', port=os.environ['LISTEN_PORT'])
+    uvicorn.run(app, host='0.0.0.0', port=int(os.environ['LISTEN_PORT']))
     
 if __name__ == "__main__":
     main()
