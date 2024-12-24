@@ -37,6 +37,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 train_data = lgb.Dataset(X_train, label=y_train)
 
 def main():
+    mlflow.set_experiment({{cookiecutter.project_slug}})
     with mlflow.start_run() as run:
         # Train model
         params = {
